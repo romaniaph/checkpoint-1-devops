@@ -23,7 +23,7 @@ module.exports = {
     }
     catch (e) {
       console.log(e)
-      return res.sendStatus({ status: "erro" })
+      return res.json({ status: "erro", error: e })
     }
   },
   async create(req, res) {
@@ -52,7 +52,7 @@ module.exports = {
     }
     catch (e) {
       console.log(e)
-      return res.sendStatus({ status: "erro" })
+      return res.json({ status: "erro", error: e })
     }
   },
   async update(req, res) {
@@ -68,11 +68,11 @@ module.exports = {
         "UPDATE TB_PARCELAS_XCAVE SET nr_valor_parcela = $1 WHERE cd_emprestimo = $2",
         [(req.body.emprestimo.valor / parcelaConsulta[0].nr_parcelas), req.body.emprestimo.id]);
 
-      return res.sendStatus(200)
+      return res.json(200)
     }
     catch (e) {
       console.log(e)
-      return res.sendStatus({ status: "erro" })
+      return res.json({ status: "erro", error: e })
     }
   },
   async delete(req, res) {
@@ -80,11 +80,11 @@ module.exports = {
       console.log(req.body)
       await db.query('DELETE FROM TB_PARCELAS_XCAVE WHERE cd_emprestimo = $1', [req.body.id]);
       await db.query('DELETE FROM TB_EMPRESTIMO_XCAVE WHERE cd_emprestimo = $1', [req.body.id]);
-      return res.sendStatus(200)
+      return res.json(200)
     }
     catch (e) {
       console.log(e)
-      return res.sendStatus({ status: "erro" })
+      return res.json({ status: "erro", error: e })
     }
   }
 }
