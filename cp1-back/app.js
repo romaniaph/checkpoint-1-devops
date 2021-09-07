@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const { createEngine } = require('express-react-views');
 const path = require('path');
 
-app.listen(3001)
+app.listen(process.env.PORT||3001)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

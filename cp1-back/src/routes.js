@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../src/controllers/controller')
 
+router.get('/', controller.index);
 router.post('/', controller.get);
 router.post('/create', controller.create);
 router.post('/update', controller.update);

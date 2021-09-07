@@ -1,6 +1,9 @@
 const db = require("../config/database");
 
 module.exports = {
+  async index(req, res) {
+    return res.json("Hello, world!")
+  },
   async get(req, res) {
     try {
       console.log(req.body)
