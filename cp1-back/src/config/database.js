@@ -2,7 +2,7 @@
  
  // ==> Conexão com a Base de Dados:
  const pool = new Pool({
-   connectionString: "postgres://pedro%40db-cp1-xcave:%40Xcave.2021@db-cp1-xcave.postgres.database.azure.com:5432/postgres",
+   connectionString: "[CONNECTION_STRING]",
  });
  
  pool.on('connect', () => {

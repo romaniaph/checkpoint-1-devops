@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://wa-xcave.azurewebsites.net",
+  baseURL: "[API_URL]",
 });
 
 export default api;
