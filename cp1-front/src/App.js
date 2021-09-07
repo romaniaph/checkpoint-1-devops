@@ -140,8 +140,8 @@ const View = (parameters) => {
 
         <div style={Div}>
           <h2>Criar novo empréstimo:</h2>
-          <input type="number" min="0" max="10000" placeholder="valor do empréstimo" style={Input} value={cria} onChange={text => setCria(text.target.value)} />
-          <input type="number" min="0" max="10000" placeholder="número de parcelas" style={Input} value={criaParcelas} onChange={text => setCriaParcelas(text.target.value)} />
+          <input type="number" min="0" maxlength="5" placeholder="valor do empréstimo" style={Input} value={cria} onChange={text => setCria(text.target.value)} />
+          <input type="number" min="0" maxlength="5" placeholder="número de parcelas" style={Input} value={criaParcelas} onChange={text => setCriaParcelas(text.target.value)} />
           <button style={Button}
             onClick={() => criaEmprestimo()}
           >CRIAR</button>
