@@ -89,7 +89,7 @@ const View = (parameters) => {
     if (!cria || !criaParcelas)
       return alert("Valor(es) inválido(s)")
 
-    if (criaParcelas >= cria )
+    if (parseInt(criaParcelas) >= parseInt(cria))
       return alert("O número de parcelas deve ser menor que o valor do empréstimo")
 
     const { emprestimo } = await Api.post('/create', { emprestimo: cria, parcelas: criaParcelas }).then(res => res.data)
